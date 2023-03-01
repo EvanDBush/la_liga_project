@@ -1,4 +1,5 @@
-
+Project: 
+    Exploring Spanish Soccer League (la liga) data from 1929-2022
 
 
 Goals: 
@@ -57,3 +58,8 @@ you make a few plots with
 matplotlib, explain what the
 reader is seeing and why you
 chose to plot things that way.
+
+Sources:
+
+data - https://github.com/jalapic/engsoccerdata
+gitignore - https://github.com/github/gitignore/blob/main/Python.gitignore
