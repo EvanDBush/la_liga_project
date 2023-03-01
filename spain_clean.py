@@ -85,12 +85,21 @@ def main() -> None:
 
 
     # 1. TODO: Remove games with phase2 in round column.
+    # logging.info('Step 1: Removing games with phase2 in "round" column.')
+    # spain_df = spain_df[spain_df['round'] != 'phase2']
 
-
-    # 2. TODO: Remove unneeded columns (tier, round)
+    # 2. TODO: Remove unneeded columns (tier, round, notes, ht)
+    # logging.info('Step 2: Removing unneeded columns.')
+    # spain_df.drop(['tier', 'round', 'group', 'notes', 'HT'], axis=1, inplace=True)
 
 
     # 3. TODO: Update column names
+    # logging.info('Step 3: Improving column readability.')
+    # spain_df.rename(columns={
+    #         'FT': 'score',
+    #         'hgoal': 'hgoal',
+    #         'vgoal': 'vgoal'
+    #     }, inplace=True)
 
 
     # 4. TODO: Add hpoints and vpoints columns
