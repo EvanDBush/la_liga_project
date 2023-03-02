@@ -32,7 +32,7 @@
     ```$ python spain_clean.py data/spain.csv results/spain_clean.csv```
 
 
-    From this point on, I use spain_clean.csv as the spain_df in the following notebooks.
+    From this point on, I use spain_clean.csv as the spain_df in the following notebooks and scripts.
 
 
 Goals: 
