@@ -14,6 +14,10 @@
     After getting a better idea of the shape of the data, I came up with 
     questions that the data could answer. Some of these questions concerned
     data that didn't seem as useful or anamolous. 
+
+    in the folder 
+    
+    /column_questions/ I attempt to answer these questions by columns.
     
     In
 
