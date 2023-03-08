@@ -2,7 +2,14 @@ import pandas as pd
 import numpy as np
 spain_clean_df = pd.read_csv("results/spain_clean.csv")
 
-barca_home_records = spain_clean_df[spain_clean_df['home' == 'FC Barcelona']]
+# 3 points for a win, 1 point for a Tie, 0 points for a loss
 
-print(barca_home_records.head())
+if spain_clean_df['hgoal'] > spain_clean_df['vgoal']:
+    spain_clean_df.assign(hpoint= 3, vpoint= 0)
+
+elif spain_clean_df['hgoal'] < spain_clean_df['vgoal']:
+    spain_clean_df.assign(hpoint= 0, vpoint= 3)
+
+else:
+    spain_clean_df.assign(hpoint= 1, vpoint= 1)
 
