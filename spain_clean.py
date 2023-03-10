@@ -100,8 +100,26 @@ def main() -> None:
         }, inplace=True)
 
 
-    # 4. TODO: Add hpoints and vpoints columns
+    # 4. TODO: Adding hpoints and vpoints columns
+    logging.info('Step 4: Adding hpoints and vpoints columns.')
     
+    home_wins_df = spain_df[spain_df['hgoal'] > spain_df['vgoal']]
+    home_wins_df = home_wins_df.assign(hpoint = 3, vpoint = 0)
+    
+    visitor_wins_df = spain_df[spain_df['hgoal'] < spain_df['vgoal']]
+    visitor_wins_df = visitor_wins_df.assign(hpoint = 0, vpoint = 3)
+
+    teams_tie_df = spain_df[spain_df['hgoal'] == spain_df['vgoal']]
+    teams_tie_df = teams_tie_df.assign(hpoint = 1, vpoint = 1)
+
+    point_df_list = [teams_tie_df, visitor_wins_df, home_wins_df]
+    spain_df = pd.concat(point_df_list).sort_values( by= 'Date')
+    
+        
+    
+   
+
+
  
     logging.info('Saving output file.')
     output_path = Path(output_file)
