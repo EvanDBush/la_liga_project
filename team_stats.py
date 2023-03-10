@@ -1,10 +1,12 @@
 import pandas as pd
 spain_clean_df = pd.read_csv("results/spain_clean.csv")
 
-team_list = spain_clean_df['home'].unique()
-print(team_list)
+
 
 def main():
+
+    team_list = spain_clean_df['home'].unique()
+    print(team_list)
 
     while (True):
         team_input = input("What team would you like stats on? (Q to Quit)")
