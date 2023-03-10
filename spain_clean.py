@@ -86,7 +86,7 @@ def main() -> None:
 
     # 1. TODO: Remove games with phase2 in round column.
     logging.info('Step 1: Removing games with phase2 in "round" column.')
-    spain_df = spain_df[spain_df['round'] != 'phase2']
+    # spain_df = spain_df[spain_df['round'] != 'phase2']
 
     # 2. TODO: Remove unneeded columns (tier, round, notes, ht)
     logging.info('Step 2: Removing unneeded columns.')
