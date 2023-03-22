@@ -13,7 +13,7 @@
 
     After getting a better idea of the shape of the data, I came up with 
     questions that the data could answer. Some of these questions concerned
-    data that didn't seem as useful or anamolous. 
+    data that didn't seem as useful. 
 
     in the folder 
     
@@ -37,6 +37,11 @@
 
 
     From this point on, I use spain_clean.csv as the spain_df in the following notebooks and scripts.
+
+    I have started to work on a small aplication that will return stats and graphics given the input on one
+    team. I may expand it to a head-to-head input or write another app for that.
+
+
 
 
 Goals: 
@@ -93,7 +98,7 @@ something about your data. If you had a list for example,
 finding the length of that list with len(<list>) does tell us a
 little bit about the data.
 
-() 3. Do 5 basic calculations with
+(x) 3. Do 5 basic calculations with
 Pandas, like finding the
 sum(), median(), mean(), or
 mode() of a column. You
@@ -110,6 +115,8 @@ matplotlib, seaborn, or any
 other kind of visualization
 library that you think looks
 interesting.
+
+-plan to use seaborn
 
 (x) 5. Write markdown cells in
 Jupyter explaining your
