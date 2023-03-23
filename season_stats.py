@@ -4,7 +4,6 @@ spain_clean_df = pd.read_csv("results/spain_clean.csv")
 def main():
 
     season_list = spain_clean_df['Season'].unique()
-    print(season_list.dtype)
     print(f'Seasons available: {season_list.min()} to {season_list.max()}')
 
     while (True):
@@ -17,7 +16,9 @@ def main():
 
             empty_season_stats = {'Team': [], 'Points': [], 'GS': [], 'GA': [], 'GD': [], 'Wins': [], 'Losses': [], 'Ties': []}   
             season_stats_df = pd.DataFrame(data= empty_season_stats)
+            
             team_list = season_records['home'].unique()
+            empty_list = []
             for team in team_list:
 
                 # gets team records
@@ -25,6 +26,7 @@ def main():
                 team_visitor_record = season_records[season_records['visitor'] == team]
                 team_season_records_df = [team_home_record, team_visitor_record]
                 team_season_records_df = pd.concat(team_season_records_df).sort_values( by= 'Date')
+                
                 #gets team points
                 team_home_points = team_home_record['hpoint'].sum()
                 team_visitor_points = team_visitor_record['vpoint'].sum()
@@ -56,9 +58,18 @@ def main():
                 team_total_losses = team_home_losses + team_away_losses
                 team_total_ties = team_home_ties + team_away_ties
 
-                team_stats = {'Team': team, 'Points': team_season_points, 'GS': team_total_goals, 'GA': team_total_goals_allowed, 'GD': team_goal_differential, 'Wins': team_total_wins, 'Losses': team_total_losses, 'Ties': team_total_ties}
-                season_stats_df.concat(team_stats)
+                team_stats = {'Team': team, 'Points': team_season_points, 
+                              'GS': team_total_goals, 'GA': team_total_goals_allowed, 
+                              'GD': team_goal_differential, 'Wins': team_total_wins, 
+                              'Losses': team_total_losses, 'Ties': team_total_ties}
+                empty_list.append(team_stats)
+                
              
+            
+            # print(season_stats_df)
+            # print(empty_list)
+            season_stats_df = pd.DataFrame(empty_list)
+            season_stats_df = season_stats_df.sort_values(by= 'Points', ascending= False).reset_index(drop=True)
             print(season_stats_df)    
                 
             

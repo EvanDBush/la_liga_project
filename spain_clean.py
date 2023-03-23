@@ -61,8 +61,8 @@ def validate_columns(df: pd.DataFrame) -> None:
 
 
 # TODO: define a function to create the audience column here
-def build_audience_column():
-    pass
+#def build_audience_column():
+#    pass
 
 
 def main() -> None:
